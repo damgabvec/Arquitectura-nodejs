@@ -1,0 +1,26 @@
+{
+  "name": "arquitectura",
+  "version": "1.0.0",
+  "description": "Tp Arquitectura Web",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.3.1",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "express-promise-router": "^3.0.3",
+    "jquery": "^3.4.1",
+    "mongoose": "^5.6.10",
+    "morgan": "^1.9.1",
+    "node-mongoose-fixtures": "^0.3.0",
+    "nodemon": "^1.19.1",
+    "popper.js": "^1.15.0"
+  }
+}

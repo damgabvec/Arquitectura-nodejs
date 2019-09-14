@@ -1,0 +1,57 @@
+<% include partials/head.ejs %>
+
+<div class="container">
+    <div class="row">
+        <br>
+        <div class="col-12 text-center">
+
+            <h1> <%= title %> </h1>
+            <hr/>
+                
+        </div>    
+    </div>
+    <div class="row">
+        <div class="col-md">
+            <table class='table table-striped table-bordered'> 
+                <tr class="text-center">
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Apellido
+
+                    </th>
+                    <th>
+                        Domunento
+                    </th>
+                    <th>
+                        Domicilio
+                    </th>
+                    <th>
+                    Nombre del Familiar
+                    </th>
+                    <th>
+                        Apellido del Familiar
+                    </th>
+                    <th>
+                        Parentesco
+                    </th>
+                </tr>
+                
+                    <% for (var i = 0; i < alumnosConFamiliares.length; i++) { %>
+                    <tr class="text-center">
+                    
+                    <td><%= alumnosConFamiliares[i].nombre %></td>
+                    <td><%= alumnosConFamiliares[i].apellido %></td>
+                    <td><%= alumnosConFamiliares[i].documento %></td>
+                    <td><%= alumnosConFamiliares[i].domicilio %></td>
+                    <td><%= alumnosConFamiliares[i].nombreFamiliar %></td>
+                    <td><%= alumnosConFamiliares[i].apellidoFamiliar %></td>
+                    <td><%= alumnosConFamiliares[i].parentesco %></td>
+                    </tr>    
+                    <% } %>
+                </table>
+        </div> 
+    </div>
+</div>
+<% include partials/footer.ejs %>
