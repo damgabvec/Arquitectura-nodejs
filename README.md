@@ -11,3 +11,5 @@ Trabajo práctico en Nodejs el cual muestra un listado de alumnos , los cuales s
 #### '/alumnos/add/:id' Agrega un alumno
 
 
+##### Para correr el servidor de este proyecto, hay que "pararse" mediante la consola donde se haya descargo el proyecto y correr el comando npm run dev ( esto va iniciar un servidor en el puerto 3000) 
+
