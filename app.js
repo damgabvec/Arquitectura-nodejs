@@ -3,7 +3,7 @@ const express = require('express' );
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
-const morgan = require('morgan');
+//const morgan = require('morgan');
 //const mongoose = require('mongoose');
 
 // Importo el modulo de rutas para poderlo utilizar 
@@ -23,13 +23,6 @@ const routes = require('./routes/index');
     // Configuro el motor de platillas que voy a usar para las vistas
     app.set('view engine', 'ejs');
     
-   // mongoose.Promise = global.Promise;
-  //  mongoose.connect('mongodb://localhost/res-api-db',{
-        //useMongoClient: true
-    //})
-      //  .then(db => console.log('Se conecto a la db'))
-        //.catch(err => console.log(err));
-
 
 // MiddleWears
 
@@ -39,8 +32,9 @@ const routes = require('./routes/index');
     });
 
     app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({extended:false}));
-    app.use(morgan('dev'));
+    app.use(bodyParser.urlencoded());
+    app.use(express.urlencoded());
+    app.use(express.json());
 
 // Routes
 

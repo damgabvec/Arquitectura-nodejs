@@ -44,6 +44,33 @@ const alumnosFind =( req , res, next ) => {
     })
 };
 
+const alumnosNew =( req , res, next ) => {
+    res.render('nuevoAlumno',{
+		title : 'Agregue un nuevo alumno',
+		
+    })
+};
+
+const buscar =  async (req, res) => {
+    
+    const docu = req.body.dni;
+
+    try {
+        let alu = await alumnoService.getById(docu);
+        
+        res.render('alumnosConID', {
+            title: 'Busqueda de ' + docu,
+            alumnosConID: alu
+
+        })
+    } catch (ex) {
+
+        console.log(ex);
+        res.status(404).end();
+    }
+
+};
+
 const deleteAlumno = 'Delete';
 
 const actualizar =  'Actualizar';
@@ -61,5 +88,7 @@ module.exports = {
 	deleteAlumno,
 	actualizar,
 	agregarAlumno,
-	alumnosFind
+    alumnosFind,
+    alumnosNew,
+    buscar
 }

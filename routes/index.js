@@ -1,7 +1,7 @@
 const express = require('express' );
 const router = express.Router();
 //const router = require('express-promise-router')();
-
+const bodyP = require('body-parser');
 //La logica de como van a resolver las urls va en controllers
 const indexController = require('../controllers/index');
 const alumnosService = require('../controllers/alumnosService');
@@ -16,12 +16,13 @@ const alumnosService = require('../controllers/alumnosService');
 router.get('/',indexController.index );
 router.get('/alumnos/list', indexController.alumnos);
 router.get('/alumnos/full', indexController.alumnosConDni);
+router.get('/alumno/new',indexController.alumnosNew);
 
-router.get('/alumnos/familiares', indexController.alumnosConFamiliares);
-router.get('/alumno/dni', indexController.alumnosFind);
+//router.get('/alumnos/familiares', indexController.alumnosConFamiliares);
+//router.get('/alumno/dni', indexController.alumnosFind);
 
 router.get('/alumnos/:documento', async (req, res) => {
-    //console.log();
+    console.log(req.body.documento);
     try {
         let alu = await alumnosService.getById(req.params.documento);
         //res.json(cli);
@@ -31,33 +32,13 @@ router.get('/alumnos/:documento', async (req, res) => {
 
         })
     } catch (ex) {
-
-       // console.log('Xxxxxx');
         res.status(404).end();
     }
 
 });
 
-router.get('/alumnos/form', async (req, res) => {
-    
-console.log(req.body['search']);
 
-
-    /*try {
-        let alu = await alumnosService.getById(req.body['search']);
-        //res.json(cli);
-        res.render('alumnosConID', {
-            title: 'Busqueda por ID Alumno',
-            alumnosConID: alu
-
-        })
-    } catch (ex) {
-
-        console.log(ex);
-        res.status(404).end();
-    }*/
-
-});
+router.post('/buscar', indexController.buscar);
 //router.delete('/alumno/:id', indexController.deleteAlumno);
 
 //router.update('/alumno/:id',indexController.actualizar);
