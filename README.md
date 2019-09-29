@@ -1,6 +1,10 @@
 # Arquitectura-nodejs
 Trabajo práctico en Nodejs el cual muestra un listado de alumnos , los cuales se pueden filtrar eliminar o agregar.
 
+Alumnos:
+- Pablo Pentreath
+- Damián Vecchio
+
 ## End Points
 #### '/' index
 #### '/alumnos/list'  Listado general de alumnos
