@@ -16,7 +16,6 @@ const alumnosService = require('../controllers/alumnosService');
 router.get('/',indexController.index );
 router.get('/alumnos/list', indexController.alumnos);
 router.get('/alumnos/full', indexController.alumnosConDni);
-router.get('/alumno/new',indexController.alumnosNew);
 
 //router.get('/alumnos/familiares', indexController.alumnosConFamiliares);
 //router.get('/alumno/dni', indexController.alumnosFind);
@@ -39,6 +38,11 @@ router.get('/alumnos/:documento', async (req, res) => {
 
 
 router.post('/buscar', indexController.buscar);
+router.post('/nuevo', indexController.nuevo);
+
+router.get('/alumno/new', indexController.alumnosNew);
+
+
 //router.delete('/alumno/:id', indexController.deleteAlumno);
 
 //router.update('/alumno/:id',indexController.actualizar);

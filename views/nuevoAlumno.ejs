@@ -1,19 +1,29 @@
 <% include partials/head.ejs %>
-<div class="container">
 
-    <div class="col-12 col-md-10 col-lg-8">
-        
-        <form class="card card-sm"  id="formulario" method="POST" action="/form">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Person</span>
-                </div>
-                <input type="text" class="form-control" placeholder="First Name">
-                <input type="text" class="form-control" placeholder="Last Name">
-              </div>
+<!-- The Modal (contains the Sign Up form) -->
+<div id="id01" class="container">
+  <form class="card card-sm"  id="formulario" method="POST" action="/nuevo">
+    <div class="container">
+      <h1>Nuevo Alumno</h1>
+      <p>Por favor ingresar los datos del alumno.</p>
+      <hr>
+      <label for="Nombre"><b>Nombre</b></label>
+      <input type="text" placeholder="Ingrese nombre." name="nombre" required>
 
-        </form>
+      <label for="Apellido"><b>Apellido</b></label>
+      <input type="Apellido" placeholder="Ingrese apellindo." name="apellido" required>
+
+      <label for="DNI"><b>DNI</b></label>
+      <input type="DNI" placeholder="Ingrese DNI." name="dni" required>
+	  
+	  <label for="Domicilio"><b>Domicilio</b></label>
+      <input type="Domicilio" placeholder="Ingrese Domicilio." name="domicilio">
+
+      <div class="clearfix">
+        <button type="submit" class="crear">Crear</button>
+      </div>
     </div>
+  </form>
 </div>
 
 <% include partials/footer.ejs %>

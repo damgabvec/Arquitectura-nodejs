@@ -44,10 +44,30 @@ const alumnosFind =( req , res, next ) => {
     })
 };
 
-const alumnosNew =( req , res, next ) => {
+const alumnosNew = (req, res, next) => {
     res.render('nuevoAlumno',{
-		title : 'Agregue un nuevo alumno',
-		
+        title: 'Agregue un nuevo alumno',
+       
+    })
+};
+
+const nuevo = async (req, res) => {
+
+    const nombre = req.body.nombre;
+    const apellido = req.body.apellido;
+    const dni = req.body.dni;
+    const domicilio = req.body.domicilio;
+
+    console.log('Nombre:' + nombre);
+    console.log('Apellido:' + apellido);
+    console.log('DNI:' + dni);
+    console.log('Domicilio:' + domicilio);
+
+    alumnoService._alumnos.push({ nombre: nombre, apellido: apellido, documento: dni, domicilio: domicilio });
+
+    res.render('alumnosConDni', {
+        title: 'Alumno creado',
+        alumnosConDni: alumnoService._alumnos
     })
 };
 
@@ -90,5 +110,6 @@ module.exports = {
 	agregarAlumno,
     alumnosFind,
     alumnosNew,
-    buscar
+    buscar,
+    nuevo
 }
